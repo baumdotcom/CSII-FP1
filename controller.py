@@ -41,7 +41,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                         total /= i
 
             self.labelOutput.setText(str(total))
-        except TypeError:
+        except ValueError:
             self.labelOutput.setText("Numbas only pretty please")
         except ZeroDivisionError:
             self.labelOutput.setText("Can't divide by zero!")
