@@ -41,6 +41,6 @@ class Controller(QMainWindow, Ui_MainWindow):
                         total /= i
 
             self.labelOutput.setText(str(total))
-        except TypeError:
-            self.labelOutput = "Numbas only pretty please"
+        except:
+            self.labelOutput.setText("Numbas only pretty please")
 
