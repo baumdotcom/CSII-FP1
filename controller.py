@@ -35,12 +35,14 @@ class Controller(QMainWindow, Ui_MainWindow):
             elif self.radio_divide.isChecked():
                 total = values[0]
                 if 0 in values:
-                    raise ValueError
+                    raise ZeroDivisionError
                 else:
                     for i in values[1:]:
                         total /= i
 
             self.labelOutput.setText(str(total))
-        except:
+        except TypeError:
             self.labelOutput.setText("Numbas only pretty please")
+        except ZeroDivisionError:
+            self.labelOutput.setText("Can't divide by zero!")
 
